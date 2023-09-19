@@ -38,7 +38,6 @@ nav h1 {
   background-color: var(--color-green);
   color: white;
   border-radius: 10px;
-  width: 100px;
 }
 
 .logIn__btn {
@@ -50,7 +49,20 @@ nav h1 {
   background-color: var(--color-yellow);
   color: white;
   border-radius: 10px;
-  width: 100px;
+}
+.CTA {
+  text-decoration: none;
+  color: unset;
+  display: none;
+}
+.CTA button {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: var(--color-yellow);
+  border-radius: 5px;
 }
 
 .buttons button:hover {
@@ -122,22 +134,13 @@ nav h1 {
     gap: 0.8rem;
   }
 
-  .signUp__btn {
-    padding: 0.3rem 0.4rem;
-    font-size: 0.8rem;
-    border-radius: 7px;
-
-    width: 70px;
-  }
-
+  .signUp__btn,
   .logIn__btn {
-    padding: 0.3rem 0.4rem;
-    font-size: 0.8rem;
-
-    border-radius: 7px;
-    width: 70px;
+    display: none;
   }
-
+  .CTA {
+    display: block;
+  }
   .hero__section {
     display: flex;
     justify-content: center;

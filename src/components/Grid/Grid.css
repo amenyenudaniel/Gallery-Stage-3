@@ -1,0 +1,186 @@
+.section__grid {
+  padding: 1rem 15%;
+  margin-top: 5rem;
+}
+
+.section__grid h2 {
+  font-size: 2.5rem;
+  font-family: var(--font-head);
+  color: var(--color-green);
+  margin-bottom: 3rem;
+}
+
+.grid__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.small__image {
+  width: 500px;
+  height: 250px;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.large__image {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.signUp__btn,
+.signUp__btn2 {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-family: var(--font-base);
+  outline: none;
+  border: none;
+  background-color: var(--color-green);
+  color: white;
+  border-radius: 10px;
+}
+
+.logIn__btn,
+.logIn__btn2 {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-family: var(--font-base);
+  outline: none;
+  border: none;
+  background-color: var(--color-yellow);
+  color: white;
+  border-radius: 10px;
+}
+
+.buttons button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:active {
+  opacity: 0.3;
+}
+.signUp__btn2,
+.logIn__btn2 {
+  display: none;
+}
+.join {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.join h3 {
+  color: var(--color-green);
+  font-size: 2.5rem;
+  font-family: var(--font-head);
+}
+
+.join p {
+  color: black;
+  font-size: 1.1rem;
+  font-family: var(--font-base);
+}
+@media screen and (max-width: 1100px) {
+  .small__image {
+    width: 400px;
+    height: 250px;
+  }
+
+  .large__image {
+    width: 400px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .section__grid {
+    padding: 1rem 4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .small__image {
+    width: 300px;
+    height: 250px;
+  }
+
+  .large__image {
+    width: 300px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .small__image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .large__image {
+    width: 100%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section__grid {
+    padding: 1rem 2rem;
+  }
+  .section__grid h2 {
+    font-size: 2rem;
+  }
+  .small__image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .large__image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .join {
+    gap: 1.2rem;
+  }
+
+  .join h3 {
+    font-size: 2rem;
+  }
+
+  .join p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section__grid {
+    padding: 1rem 1rem;
+  }
+
+  .signUp__btn2,
+  .logIn__btn2 {
+    display: flex;
+  }
+  .section__grid h2 {
+    font-size: 1.8rem;
+  }
+}
