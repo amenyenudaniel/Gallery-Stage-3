@@ -12,6 +12,7 @@ import star2 from "./star2.svg";
 import star3 from "./star3.svg";
 import star4 from "./star4.svg";
 import star5 from "./star5.svg";
+import loader from "./loader.svg";
 
 export {
   camera,
@@ -28,4 +29,5 @@ export {
   star3,
   star4,
   star5,
+  loader,
 };

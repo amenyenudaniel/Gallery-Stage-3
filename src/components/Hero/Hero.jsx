@@ -7,8 +7,12 @@ const Hero = () => {
       <nav>
         <h1 onClick={() => navigate("/")}>AIGallery</h1>
         <div className="buttons">
-          <button className="signUp__btn">Sign Up</button>
-          <button className="logIn__btn">Log In</button>
+          <button className="signUp__btn" onClick={() => navigate("/signUp")}>
+            Sign Up
+          </button>
+          <button className="logIn__btn" onClick={() => navigate("/logIn")}>
+            Log In
+          </button>
 
           <a href="#join" className="CTA">
             <button>Get Started</button>

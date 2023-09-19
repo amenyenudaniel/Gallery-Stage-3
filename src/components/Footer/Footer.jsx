@@ -8,7 +8,9 @@ const Footer = () => {
         {footerLinks.map((item) => (
           <div key={item.id}>
             {item.links.map((link) => (
-              <p className="linkName">{link.linkName}</p>
+              <p className="linkName" key={link.linkName}>
+                {link.linkName}
+              </p>
             ))}
           </div>
         ))}
