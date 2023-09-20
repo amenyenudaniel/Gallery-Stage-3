@@ -5,6 +5,7 @@ import { auth } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import { AuthDetails } from "../../components";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

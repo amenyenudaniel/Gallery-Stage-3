@@ -1,6 +1,11 @@
+import { DragDrop } from "../../components";
 import "./Gallery.css";
 const Gallery = () => {
-  return <div>Gallery</div>;
+  return (
+    <div>
+      <DragDrop />
+    </div>
+  );
 };
 
 export default Gallery;
