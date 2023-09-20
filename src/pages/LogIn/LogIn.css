@@ -94,6 +94,14 @@ form small span {
 form small span:hover {
   text-decoration: underline black;
 }
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-family: var(--font-base);
+  text-align: center;
+}
 @media screen and (max-width: 1000px) {
   .section__login {
     padding: 1rem 4rem;

@@ -106,3 +106,21 @@
 .drag-area .dragover .visible {
   display: none;
 }
+
+@media screen and (max-width: 700px) {
+  .drag-area {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .drag-area {
+    height: 300px;
+    width: 100%;
+  }
+
+  .drag-area {
+    flex-direction: column;
+  }
+}

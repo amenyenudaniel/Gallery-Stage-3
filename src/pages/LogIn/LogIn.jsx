@@ -1,25 +1,36 @@
-import "./LogIn.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import { AuthDetails } from "../../components";
+import "./LogIn.css";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [errorP, setErrorP] = useState(null);
 
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         console.log(userCredentials);
+        navigate("/gallery");
       })
       .catch((error) => {
-        console.log(error);
+        if (error.code === "auth/user-not-found") {
+          setError("This account does not exist. Please create a new account.");
+        } else {
+          setError(error.message);
+        }
       });
+
+    if (password.length < 6) {
+      setErrorP("Password must be at least 6 characters long.");
+      return;
+    }
   };
 
   return (
@@ -52,9 +63,16 @@ const LogIn = () => {
             Not registered?{" "}
             <span onClick={() => navigate("/signUp")}>Create Account</span>
           </small>
+
+          {error && (
+            <p className="error">
+              This account does not exist. <br />
+              Please create a new account.
+            </p>
+          )}
+          {errorP < 6 && <p className="error">{errorP}</p>}
         </form>
       </section>
-      <AuthDetails />
     </>
   );
 };

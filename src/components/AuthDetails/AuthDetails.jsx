@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const AuthDetails = () => {
   const navigate = useNavigate();
   const [authUser, setAuthUser] = useState(null);
+
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {

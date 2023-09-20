@@ -5,4 +5,14 @@ import ScrollToTop from "./ScrollToTop";
 import Grid from "./Grid/Grid";
 import AuthDetails from "./AuthDetails/AuthDetails";
 import DragDrop from "./DragDrop/DragDrop";
-export { Welcome, Footer, Grid, Hero, ScrollToTop, AuthDetails, DragDrop };
+import GalleryImages from "./GalleryImages/GalleryImages";
+export {
+  Welcome,
+  Footer,
+  Grid,
+  Hero,
+  ScrollToTop,
+  AuthDetails,
+  DragDrop,
+  GalleryImages,
+};

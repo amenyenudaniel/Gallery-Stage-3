@@ -1,39 +1,43 @@
-import "./SignUp.css";
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
 import { auth } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
-import { AuthDetails } from "../../components";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [errorP, setErrorP] = useState(null);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password.length < 6) {
+      setErrorP("Password must be at least 6 characters long.");
+      return;
+    }
+
     try {
-      setLoading(true);
-      e.preventDefault();
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
           console.log(userCredentials);
+          navigate("/gallery");
         })
         .finally(() => {
-          setLoading(false);
           setPassword("");
           setEmail("");
         });
     } catch (error) {
-      console.log(error);
+      if (error.code === "auth/email-already-in-use") {
+        console.error("This account already exists. Please log in.");
+      } else {
+        console.error(error.message);
+      }
     }
   };
 
-  if (loading) {
-    return <Loader />;
-  }
   return (
     <>
       <div className="login__container">
@@ -59,12 +63,18 @@ const SignUp = () => {
           />
           <button type="submit">Sign Up</button>
           <small>
-            Already have an account{" "}
+            Already have an account?{" "}
             <span onClick={() => navigate("/logIn")}>Log In</span>
           </small>
+          {error && (
+            <p className="error">
+              {"Please this account already exist Log In"}
+            </p>
+          )}
+
+          {password.length < 6 && <p className="error">{errorP}</p>}
         </form>
       </section>
-      <AuthDetails />
     </>
   );
 };
